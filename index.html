@@ -1,59 +1,214 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرحباً بك في أكوادرا</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Cairo', sans-serif;
-      }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سوق لوميير | منتجات وأسعار وصور بتجربة ثلاثية الأبعاد</title>
+  <meta name="description" content="تطبيق عربي أنيق لعرض المنتجات والصور والأسعار مع بحث، فلترة، ترتيب، صفحات تفاصيل وسلة مشتريات تفاعلية." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen text-gray-800">
-    <div class="max-w-md w-full text-center p-6">
-        <h1 class="text-3xl font-bold text-slate-800 mb-4 tracking-tight">مرحباً بك في أكوادرا</h1>
-        <p class="text-gray-600 mb-8">
-            المنشئ الخارق الذي يساعدك على بناء تطبيقات جميلة باستخدام الذكاء الاصطناعي.
-        </p>
-        
-        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:scale-105 transition-all duration-300 cursor-pointer card group">
-            <div class="flex items-center justify-center mx-auto mb-4">
-                <svg viewBox="0 0 100 100" class="w-12 h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="gold-gradient" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#FDE047" />
-                      <stop offset="45%" stop-color="#D97706" />
-                      <stop offset="100%" stop-color="#78350F" />
-                    </linearGradient>
-                    <filter id="dropshadow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.4" />
-                    </filter>
-                  </defs>
-                  <path d="M50 8 C 54 8, 56 12, 58 15 L 88 75 C 90 79, 88 88, 80 88 H 20 C 12 88, 10 79, 12 75 L 42 15 C 44 12, 46 8, 50 8 Z" fill="#292524" stroke="#44403C" stroke-width="1" filter="url(#dropshadow)" />
-                  <path d="M50 20 L 78 78 H 22 L 50 20 Z" stroke="url(#gold-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  <g transform="translate(0, 2)">
-                    <path d="M35 45 C 35 45, 42 35, 50 35 C 58 35, 65 45, 65 45 C 65 45, 58 55, 50 55 C 42 55, 35 45, 35 45 Z" stroke="url(#gold-gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                    <circle cx="50" cy="45" r="3.5" fill="url(#gold-gradient)" />
-                  </g>
-                  <path d="M28 78 V 70 L 35 63" stroke="url(#gold-gradient)" stroke-width="2" stroke-linecap="round" />
-                  <circle cx="35" cy="63" r="2" fill="url(#gold-gradient)" />
-                  <path d="M72 78 V 70 L 65 63" stroke="url(#gold-gradient)" stroke-width="2" stroke-linecap="round" />
-                  <circle cx="65" cy="63" r="2" fill="url(#gold-gradient)" />
-                  <path d="M50 78 V 65" stroke="url(#gold-gradient)" stroke-width="2" stroke-linecap="round" />
-                  <circle cx="50" cy="65" r="2" fill="url(#gold-gradient)" />
-                </svg>
-            </div>
-            <h2 class="text-xl font-semibold text-gray-900 mb-2">جاهز للبناء</h2>
-            <p class="text-gray-500 text-sm">اطلب من الذكاء الاصطناعي تغيير هذا التصميم أو بناء شيء جديد كلياً.</p>
+<body>
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <div class="ambient-scene" aria-hidden="true">
+    <span class="halo halo-one"></span>
+    <span class="halo halo-two"></span>
+    <span class="mesh-line mesh-a"></span>
+    <span class="mesh-line mesh-b"></span>
+  </div>
+
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="التنقل الرئيسي">
+      <a class="brand" href="/" data-link aria-label="العودة للرئيسية">
+        <span class="brand-mark">ل</span>
+        <span>
+          <strong>سوق لوميير</strong>
+          <small>منتجات مختارة بوضوح</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" data-link>الرئيسية</a>
+        <a href="/products" data-link>المنتجات</a>
+        <a href="/offers" data-link>العروض</a>
+        <a href="/about" data-link>عن المتجر</a>
+        <a href="/contact" data-link>تواصل</a>
+      </div>
+      <a class="cart-pill" href="/cart" data-link aria-label="فتح سلة المشتريات">
+        <span>السلة</span>
+        <strong id="cartCount">0</strong>
+      </a>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+  <template id="homeTemplate">
+    <section class="hero page-panel" data-depth="0.18">
+      <div class="hero-copy reveal-up">
+        <p class="eyebrow">واجهة كتالوج ذكية</p>
+        <h1>اعرض منتجاتك، صورها وأسعارها بتجربة تتحرك مع الزائر.</h1>
+        <p class="hero-lead">تطبيق واجهة أمامية كامل لعرض المنتجات بطريقة فاخرة: بطاقات ثلاثية الأبعاد، بحث مباشر، فلترة حسب الفئة، ترتيب الأسعار، صفحات تفاصيل، وسلة مشتريات أنيقة.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="/products" data-link>تصفح المنتجات</a>
+          <a class="btn ghost" href="/offers" data-link>مشاهدة العروض</a>
         </div>
-        
-        <div class="mt-8 text-sm text-gray-400">
-            مدعوم بواسطة احدث نماذج الذكاء الاصطناعي
+        <div class="trust-row" aria-label="مميزات المتجر">
+          <span>صور واضحة</span>
+          <span>أسعار مباشرة</span>
+          <span>تجربة جوال ممتازة</span>
         </div>
-    </div>
-    <script src="script.js"></script>
+      </div>
+      <div class="hero-stage reveal-zoom" aria-label="عرض ثلاثي الأبعاد لمنتجات مختارة">
+        <div class="orbit-ring"></div>
+        <article class="floating-product product-a">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="حذاء رياضي أبيض وبرتقالي" />
+          <span>حذاء Velocity</span>
+          <strong>1,250 ج.م</strong>
+        </article>
+        <article class="floating-product product-b">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="ساعة يد أنيقة" />
+          <span>ساعة Noble</span>
+          <strong>2,900 ج.م</strong>
+        </article>
+        <article class="floating-product product-c">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="سماعات رأس سوداء" />
+          <span>سماعة Aura</span>
+          <strong>1,740 ج.م</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="stats-strip reveal-up">
+      <div><strong>48+</strong><span>منتج جاهز للعرض</span></div>
+      <div><strong>6</strong><span>فئات مرتبة</span></div>
+      <div><strong>3D</strong><span>حركة عمق حقيقية</span></div>
+      <div><strong>24/7</strong><span>تصفح سريع من أي جهاز</span></div>
+    </section>
+
+    <section class="section-head reveal-up">
+      <p class="eyebrow">منتجات مختارة</p>
+      <h2>بطاقات تلمع عند الحركة وتكشف السعر بوضوح.</h2>
+      <p>كل بطاقة مصممة لتناسب البيع السريع: صورة كبيرة، اسم واضح، فئة، سعر، تقييم، وزر إضافة للسلة.</p>
+    </section>
+    <section class="featured-grid" id="featuredProducts"></section>
+
+    <section class="story-panel page-panel reveal-up" data-depth="0.12">
+      <div>
+        <p class="eyebrow">فكرة بصرية لا تُنسى</p>
+        <h2>رف منتجات ثلاثي الأبعاد يستجيب للتمرير.</h2>
+        <p>طبقات الإضاءة والبطاقات المتداخلة تمنح الزائر إحساس متجر حقيقي، بينما تظل الأسعار واضحة وسهلة القراءة.</p>
+      </div>
+      <div class="shelf-3d" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+  </template>
+
+  <template id="productsTemplate">
+    <section class="catalog-hero page-panel" data-depth="0.1">
+      <div class="section-head compact reveal-up">
+        <p class="eyebrow">كتالوج المنتجات</p>
+        <h1>اختر، قارن، ورتّب المنتجات حسب ما يناسبك.</h1>
+        <p>قائمة منتجات كاملة مع صور وأسعار وفلاتر وفرز وترقيم صفحات حتى يستطيع العميل الوصول للمنتج بسرعة.</p>
+      </div>
+    </section>
+
+    <section class="toolbar reveal-up" aria-label="أدوات البحث والفلترة">
+      <label class="search-box">
+        <span>بحث</span>
+        <input id="searchInput" type="search" placeholder="ابحث باسم المنتج..." autocomplete="off" />
+      </label>
+      <label>
+        <span>الفئة</span>
+        <select id="categoryFilter"></select>
+      </label>
+      <label>
+        <span>الترتيب</span>
+        <select id="sortSelect">
+          <option value="featured">الأكثر تميزاً</option>
+          <option value="price-asc">السعر من الأقل للأعلى</option>
+          <option value="price-desc">السعر من الأعلى للأقل</option>
+          <option value="rating-desc">الأعلى تقييماً</option>
+          <option value="name-asc">الاسم أبجدياً</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="catalog-layout">
+      <aside class="catalog-aside reveal-up">
+        <h3>ملخص سريع</h3>
+        <p>استخدم الفلاتر لتجهيز عرض أسعار واضح للعميل، ثم أضف المنتجات للسلة.</p>
+        <div class="aside-meter"><span id="resultCount">0</span><small>نتائج مطابقة</small></div>
+        <a class="btn ghost full" href="/cart" data-link>فتح السلة</a>
+      </aside>
+      <div>
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+  </template>
+
+  <template id="detailTemplate">
+    <section class="product-detail page-panel" id="productDetail" data-depth="0.14"></section>
+  </template>
+
+  <template id="offersTemplate">
+    <section class="section-head reveal-up">
+      <p class="eyebrow">عروض اليوم</p>
+      <h1>خصومات مضيئة على المنتجات الأسرع مبيعاً.</h1>
+      <p>صفحة مستقلة للعروض تساعدك على إبراز الأسعار الخاصة والحملات الموسمية.</p>
+    </section>
+    <section class="offer-wall" id="offerWall"></section>
+  </template>
+
+  <template id="aboutTemplate">
+    <section class="about-page page-panel reveal-up" data-depth="0.1">
+      <div>
+        <p class="eyebrow">عن سوق لوميير</p>
+        <h1>واجهة مصممة لتقديم المنتج بثقة قبل أن يلمسه العميل.</h1>
+        <p>هذا التطبيق مناسب لأي متجر يريد عرض المنتجات والأسعار والصور بشكل احترافي، مع حركة راقية ومعلومات منظمة تساعد الزائر على اتخاذ قرار الشراء.</p>
+      </div>
+      <div class="about-cards">
+        <article><strong>وضوح</strong><span>كل سعر ظاهر ومقروء.</span></article>
+        <article><strong>سرعة</strong><span>فلترة وترتيب بدون تعقيد.</span></article>
+        <article><strong>جمال</strong><span>عمق بصري وحركة ناعمة.</span></article>
+      </div>
+    </section>
+  </template>
+
+  <template id="contactTemplate">
+    <section class="contact-page page-panel reveal-up" data-depth="0.1">
+      <div>
+        <p class="eyebrow">تواصل معنا</p>
+        <h1>أرسل طلب إضافة منتج أو استفسار عن الأسعار.</h1>
+        <p>نموذج تواصل أنيق يجمع بيانات العميل وطلبه، مناسب للطلبات السريعة أو تحديث أسعار المنتجات.</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label>الاسم الكامل<input required name="name" placeholder="مثال: كريم وجيه" /></label>
+        <label>رقم الهاتف<input required name="phone" placeholder="01xxxxxxxxx" /></label>
+        <label>نوع الطلب<select name="topic"><option>إضافة منتج جديد</option><option>استفسار عن سعر</option><option>طلب عرض خاص</option></select></label>
+        <label>الرسالة<textarea required name="message" rows="5" placeholder="اكتب تفاصيل طلبك..."></textarea></label>
+        <button class="btn primary" type="submit">إرسال الطلب</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </section>
+  </template>
+
+  <template id="cartTemplate">
+    <section class="section-head reveal-up">
+      <p class="eyebrow">سلة المشتريات</p>
+      <h1>راجع المنتجات المختارة والأسعار الإجمالية.</h1>
+      <p>يمكنك تعديل الكميات أو حذف المنتجات قبل إرسال الطلب.</p>
+    </section>
+    <section class="cart-page">
+      <div class="cart-list" id="cartList"></div>
+      <aside class="cart-summary" id="cartSummary"></aside>
+    </section>
+  </template>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
